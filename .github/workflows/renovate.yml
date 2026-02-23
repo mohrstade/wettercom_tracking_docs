@@ -27,5 +27,5 @@ jobs:
           gh pr list --author "app/github-actions" --state open --json headRefName --jq '.[].headRefName' | \
           while read branch; do
             echo "Triggering CI for $branch"
-            gh workflow run ci.yml --ref "$branch"
+            gh workflow run ci.yml --ref main --field ref="$branch"
           done
