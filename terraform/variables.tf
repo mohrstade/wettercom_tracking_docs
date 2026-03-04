@@ -23,3 +23,20 @@ variable "github_repo" {
   description = "GitHub repository in owner/repo format (e.g. MoritzMohrStade/tracking_docs)"
   type        = string
 }
+
+variable "iap_oauth2_client_id" {
+  description = "OAuth 2.0 client ID created manually in GCP Console (APIs & Services → Credentials)"
+  type        = string
+}
+
+variable "iap_oauth2_client_secret" {
+  description = "OAuth 2.0 client secret created manually in GCP Console"
+  type        = string
+  sensitive   = true
+}
+
+variable "iap_members" {
+  description = "Additional IAP members beyond domain:wetter.com, in IAM member format (e.g. [\"user:moritz@mohrstade.de\"])"
+  type        = list(string)
+  default     = []
+}

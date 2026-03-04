@@ -28,6 +28,10 @@ resource "google_project_service" "apis" {
     "iamcredentials.googleapis.com",
     "sts.googleapis.com",
     "storage.googleapis.com",
+    "run.googleapis.com",
+    "iap.googleapis.com",
+    "artifactregistry.googleapis.com",
+    "cloudresourcemanager.googleapis.com",
   ])
 
   service            = each.value

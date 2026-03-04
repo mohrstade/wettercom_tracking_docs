@@ -1,0 +1,47 @@
+name: Deploy Proxy
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'proxy/**'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      id-token: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: ${{ secrets.WIF_PROVIDER }}
+          service_account: ${{ secrets.WIF_SERVICE_ACCOUNT }}
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Configure Docker for Artifact Registry
+        run: gcloud auth configure-docker ${{ secrets.PROXY_IMAGE_REGION }}-docker.pkg.dev --quiet
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v6
+        with:
+          context: proxy
+          push: true
+          tags: ${{ secrets.PROXY_IMAGE }}:${{ github.sha }},${{ secrets.PROXY_IMAGE }}:latest
+          cache-from: type=registry,ref=${{ secrets.PROXY_IMAGE }}:latest
+          cache-to: type=inline
+
+      - name: Deploy new image to Cloud Run
+        run: |
+          gcloud run services update ${{ secrets.CLOUDRUN_SERVICE }} \
+            --region=${{ secrets.CLOUDRUN_REGION }} \
+            --image=${{ secrets.PROXY_IMAGE }}:${{ github.sha }}

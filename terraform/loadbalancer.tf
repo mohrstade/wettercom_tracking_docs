@@ -4,19 +4,36 @@ resource "google_compute_global_address" "site" {
   depends_on = [google_project_service.apis]
 }
 
-# Backend bucket with Cloud CDN enabled
-resource "google_compute_backend_bucket" "site" {
-  name        = "tracking-docs-backend"
-  bucket_name = google_storage_bucket.site.name
-  enable_cdn  = true
+# Serverless NEG pointing at the Cloud Run proxy
+resource "google_compute_region_network_endpoint_group" "cloudrun_neg" {
+  name                  = "tracking-docs-neg"
+  network_endpoint_type = "SERVERLESS"
+  region                = var.region
 
-  cdn_policy {
-    cache_mode       = "CACHE_ALL_STATIC"
-    client_ttl       = 3600
-    default_ttl      = 3600
-    max_ttl          = 86400
-    negative_caching = true
+  cloud_run {
+    service = google_cloud_run_v2_service.proxy.name
   }
+
+  depends_on = [google_project_service.apis]
+}
+
+# Backend service with IAP enabled (replaces the former backend bucket)
+resource "google_compute_backend_service" "site" {
+  name                  = "tracking-docs-backend"
+  load_balancing_scheme = "EXTERNAL_MANAGED"
+  protocol              = "HTTPS"
+  enable_cdn            = false
+
+  backend {
+    group = google_compute_region_network_endpoint_group.cloudrun_neg.id
+  }
+
+  iap {
+    oauth2_client_id     = var.iap_oauth2_client_id
+    oauth2_client_secret = var.iap_oauth2_client_secret
+  }
+
+  depends_on = [google_project_service.apis]
 }
 
 # Google-managed SSL certificate
@@ -33,7 +50,7 @@ resource "google_compute_managed_ssl_certificate" "site" {
 # URL map for HTTPS traffic
 resource "google_compute_url_map" "site" {
   name            = "tracking-docs-url-map"
-  default_service = google_compute_backend_bucket.site.id
+  default_service = google_compute_backend_service.site.id
 }
 
 # URL map for HTTP → HTTPS redirect

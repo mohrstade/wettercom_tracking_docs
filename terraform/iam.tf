@@ -48,10 +48,19 @@ resource "google_storage_bucket_iam_member" "github_actions_writer" {
   member = "serviceAccount:${google_service_account.github_actions.email}"
 }
 
-# The LB backend bucket serves objects publicly via its own mechanism —
-# allUsers objectViewer is needed for the backend bucket to serve files
-resource "google_storage_bucket_iam_member" "public_read" {
-  bucket = google_storage_bucket.site.name
-  role   = "roles/storage.objectViewer"
-  member = "allUsers"
+# Allow GitHub Actions SA to push images to Artifact Registry
+resource "google_artifact_registry_repository_iam_member" "github_actions_ar_writer" {
+  repository = google_artifact_registry_repository.proxy.name
+  location   = google_artifact_registry_repository.proxy.location
+  role       = "roles/artifactregistry.writer"
+  member     = "serviceAccount:${google_service_account.github_actions.email}"
+}
+
+# Allow GitHub Actions SA to deploy new revisions to Cloud Run
+resource "google_cloud_run_v2_service_iam_member" "github_actions_run_developer" {
+  project  = var.project_id
+  location = var.region
+  name     = google_cloud_run_v2_service.proxy.name
+  role     = "roles/run.developer"
+  member   = "serviceAccount:${google_service_account.github_actions.email}"
 }
