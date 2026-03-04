@@ -1,0 +1,25 @@
+---
+title: pagetrack
+description: "Page related information provided idealy as a starting event for every page_view"
+sidebar_label: pagetrack
+custom_edit_url: https://github.com/benedikt-buchert/tracking_docs/edit/main/demo/static/schemas/next/events/pagetrack.json
+---
+
+import SchemaViewer from '@theme/SchemaViewer';
+import SchemaJsonViewer from '@theme/SchemaJsonViewer';
+
+
+
+# pagetrack
+
+Page related information provided idealy as a starting event for every page_view
+
+
+
+<SchemaViewer
+  schema={{"$schema":"https://json-schema.org/draft/2020-12/schema","$id":"https://tracking-docs-demo.buchert.digital/schemas/events/pagetrack.json","title":"pagetrack","description":"Page related information provided idealy as a starting event for every page_view","type":"object","allOf":[{"$ref":"./events/components/dataLayer.json"}],"required":["$schema","event","mobileWebType","pageCountry","pageName","pageType","pageTypeDetail"],"properties":{"$schema":{"description":"Defines the structure of the event. This can be used to validate an event against the schema provided.","const":"https://tracking-docs-demo.buchert.digital/schemas/events/pagetrack.json","type":"string"},"event":{"type":"string","const":"pagetrack","description":"Contains information about page type, page city and page country etc... "},"mobileWebType":{"type":"string","description":"Defines the type of webpage. Either web-app-react or old","examples":["web-app-react","old"]},"pageCountry":{"type":"string","enum":["de","at","ch"],"description":"The country for the website based on the URL exp. at for at.wetter.com"},"pageName":{"type":"string","description":"The name of the page.","examples":["main"]},"pageType":{"type":"string","description":"The type of the page.","examples":["home"]},"pageTypeDetail":{"type":"string","description":"The detail type of the page.","examples":["main"]}}}}
+  
+/>
+<SchemaJsonViewer schema={{"$schema":"https://json-schema.org/draft/2020-12/schema","$id":"https://tracking-docs-demo.buchert.digital/schemas/events/pagetrack.json","title":"pagetrack","description":"Page related information provided idealy as a starting event for every page_view","type":"object","allOf":[{"$ref":"./events/components/dataLayer.json"}],"required":["$schema","event","mobileWebType","pageCountry","pageName","pageType","pageTypeDetail"],"properties":{"$schema":{"description":"Defines the structure of the event. This can be used to validate an event against the schema provided.","const":"https://tracking-docs-demo.buchert.digital/schemas/events/pagetrack.json","type":"string"},"event":{"type":"string","const":"pagetrack","description":"Contains information about page type, page city and page country etc... "},"mobileWebType":{"type":"string","description":"Defines the type of webpage. Either web-app-react or old","examples":["web-app-react","old"]},"pageCountry":{"type":"string","enum":["de","at","ch"],"description":"The country for the website based on the URL exp. at for at.wetter.com"},"pageName":{"type":"string","description":"The name of the page.","examples":["main"]},"pageType":{"type":"string","description":"The type of the page.","examples":["home"]},"pageTypeDetail":{"type":"string","description":"The detail type of the page.","examples":["main"]}}}} />
+
+

@@ -1,7 +1,8 @@
-name: Deploy Docusaurus to GitHub Pages
+name: Deploy Docusaurus to GCS
 
 permissions:
-  contents: write
+  contents: read
+  id-token: write  # required for Workload Identity Federation
 
 on:
   push:
@@ -14,8 +15,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          persist-credentials: true
 
       - name: Use Node.js 20
         uses: actions/setup-node@v4
@@ -24,16 +23,21 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        run: |
-          npm ci
+        run: npm ci
+
       - name: Build Docusaurus site
         run: npm run build
         working-directory: ./demo
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v2
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./demo/build
-          publish_branch: gh-pages
-          cname: tracking-docs-demo.buchert.digital
+          workload_identity_provider: ${{ secrets.WIF_PROVIDER }}
+          service_account: ${{ secrets.WIF_SERVICE_ACCOUNT }}
+
+      - name: Set up Cloud SDK
+        uses: google-github-actions/setup-gcloud@v2
+
+      - name: Deploy to GCS
+        run: |
+          gsutil -m rsync -r -d ./demo/build gs://${{ secrets.GCS_BUCKET }}

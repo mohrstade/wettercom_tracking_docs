@@ -1,0 +1,5 @@
+project_id  = "your-gcp-project-id"
+bucket_name = "tracking-docs-site"       # must be globally unique in GCS
+domain      = "tracking-docs-demo.buchert.digital"
+github_repo = "MoritzMohrStade/tracking_docs"
+# region defaults to europe-west1, override here if needed

@@ -9,3 +9,11 @@ yarn-debug.log*
 yarn-error.log*
 demo/docs/events/
 coverage/
+
+# Terraform
+terraform/.terraform/
+terraform/.terraform.lock.hcl
+terraform/terraform.tfvars
+terraform/*.tfplan
+terraform/*.tfstate
+terraform/*.tfstate.backup
