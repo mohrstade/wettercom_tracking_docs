@@ -20,7 +20,7 @@
     "prettier": "prettier --write ."
   },
   "overrides": {
-    "minimatch": ">=10.2.1"
+    "minimatch": ">=10.2.4"
   },
   "devDependencies": {
     "@babel/core": "^7.24.0",

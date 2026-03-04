@@ -27,6 +27,6 @@
        
     }
   },
-  "required": ["$schema", "event","mobileWebType","pageCountry","pageName","pageType","pageTypeDetail"]
+  "required": ["$schema", "event"]
 }
 
