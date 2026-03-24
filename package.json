@@ -7,6 +7,7 @@
     "build": "npm run build --prefix docs",
     "gen-docs": "npm run gen-docs --prefix docs",
     "validate-schemas": "npm run validate-schemas --prefix docs",
+    "version": "npm run version --prefix docs --",
     "lint": "eslint .",
     "prepare": "husky",
     "eslint:fix": "eslint --fix .",
