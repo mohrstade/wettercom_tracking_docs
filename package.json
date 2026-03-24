@@ -2,21 +2,14 @@
   "name": "tracking-docs",
   "version": "1.1.0",
   "private": true,
-  "workspaces": [
-    "packages/*",
-    "demo"
-  ],
   "scripts": {
-    "start": "npm run start -w demo",
-    "build": "npm run build -w demo",
-    "gen-docs": "npm run gen-docs -w demo",
-    "validate-schemas": "npm run validate-schemas -w demo",
-    "update-schema-ids": "npm run update-schema-ids -w demo",
-    "version": "npm run version -w demo",
+    "start": "npm run start --prefix docs",
+    "build": "npm run build --prefix docs",
+    "gen-docs": "npm run gen-docs --prefix docs",
+    "validate-schemas": "npm run validate-schemas --prefix docs",
     "lint": "eslint .",
     "prepare": "husky",
     "eslint:fix": "eslint --fix .",
-    "test": "jest",
     "prettier": "prettier --write ."
   },
   "overrides": {
@@ -35,6 +28,7 @@
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-jest": "^29.12.1",
     "eslint-plugin-json-schema-validator": "^5.5.1",
+    "eslint-plugin-tracking-schema": "^1.0.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",
     "eslint-plugin-prettier": "^5.5.4",
     "eslint-plugin-react": "^7.37.5",

@@ -1,5 +1,8 @@
 build/
-demo/build/
+docs/build/
 node_modules/
 .docusaurus/
-demo/.docusaurus/
+docs/.docusaurus/
+__mocks__/
+docs/**/*.js
+scripts/

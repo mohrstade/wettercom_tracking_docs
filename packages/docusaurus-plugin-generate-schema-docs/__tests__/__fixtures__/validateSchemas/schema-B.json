@@ -1,7 +1,0 @@
-{
-  "title": "Schema B",
-  "type": "object",
-  "properties": {
-    "a": { "$ref": "schema-A.json" }
-  }
-}
