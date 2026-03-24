@@ -1,42 +1,20 @@
 module.exports = {
-  extends: [
-    'plugin:@docusaurus/recommended',
-    'plugin:react/recommended',
-    'plugin:react-hooks/recommended',
-    'plugin:jsx-a11y/recommended',
-    'plugin:jest/recommended',
-    'plugin:json-schema-validator/recommended',
-    'plugin:prettier/recommended',
-  ],
-  parser: '@babel/eslint-parser',
-  parserOptions: {
-    requireConfigFile: false,
-    babelOptions: {
-      presets: [require.resolve('@docusaurus/core/lib/babel/preset')],
-    },
-  },
-  plugins: [
-    'react',
-    'react-hooks',
-    'jsx-a11y',
-    'jest',
-    'prettier',
-    'json-schema-validator',
-  ],
-  rules: {
-    'prettier/prettier': 'error',
-    'react/prop-types': 'off',
-    'json-schema-validator/no-invalid': 'error',
-  },
-  settings: {
-    react: {
-      version: 'detect',
-    },
-  },
+  plugins: ['tracking-schema'],
   overrides: [
     {
-      files: ['*.json', '*.json5', '*.jsonc'],
+      files: ['docs/static/schemas/**/*.json'],
       parser: 'jsonc-eslint-parser',
+      rules: {
+        'tracking-schema/require-description': 'warn',
+        'tracking-schema/require-type': 'error',
+        'tracking-schema/require-examples': 'error',
+      },
+    },
+    {
+      files: ['docs/static/schemas/**/components/*.json'],
+      rules: {
+        'tracking-schema/require-examples': 'off',
+      },
     },
   ],
 };

@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://tracking-docs-demo.buchert.digital/schemas/1.0.1/events/pagetrack.json",
+  "title": "pagetrack",
+  "description": "Page related information provided idealy as a starting event for every page_view",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "description": "Defines the structure of the event. This can be used to validate an event against the schema provided.",
+      "const": "https://tracking-docs-demo.buchert.digital/schemas/events/pagetrack.json",
+      "type": "string"
+    },
+    "event": {
+      "type": "string",
+      "const": "pagetrack",
+      "description": "Contains information about page type, page city and page country etc... "
+    },
+    "mobileWebType": {
+      "type": "string",
+      "description": "Defines the type of webpage. Either web-app-react or old",
+      "examples": [
+        "web-app-react",
+        "old"
+      ]
+    },
+    "pageCountry": {
+      "type": "string",
+      "description": "The country for the website",
+      "enum": [
+        "de",
+        "at",
+        "ch"
+      ]
+    },
+    "pageName": {
+      "type": "string",
+      "description": "The name of the page.",
+      "examples": [
+        "main"
+      ]
+    }
+  },
+  "required": [
+    "$schema",
+    "event",
+    "mobileWebType",
+    "pageCountry",
+    "pageName"
+  ]
+}

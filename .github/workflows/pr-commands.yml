@@ -5,7 +5,7 @@ on:
     types: [created]
 
 jobs:
-  release_demo:
+  release_docs:
     if: github.event.issue.pull_request && startsWith(github.event.comment.body, '/release-demo')
     runs-on: ubuntu-latest
     steps:
@@ -31,9 +31,16 @@ jobs:
         with:
           node-version: '24'
           cache: 'npm'
+          cache-dependency-path: |
+            package-lock.json
+            docs/package-lock.json
 
-      - name: Install dependencies
+      - name: Install root dependencies
         run: npm ci --ignore-scripts
+
+      - name: Install docs dependencies
+        run: npm ci --ignore-scripts
+        working-directory: ./docs
 
       - name: Configure Git
         run: |
@@ -44,11 +51,11 @@ jobs:
         run: |
           VERSION=$(echo "${{ github.event.comment.body }}" | cut -d' ' -f2)
           npm run version -- $VERSION
+        working-directory: ./docs
 
       - name: Commit and push versioned files
         run: |
+          VERSION=$(echo "${{ github.event.comment.body }}" | cut -d' ' -f2)
           git add .
           git commit -m "docs: version docs and schemas for $VERSION [skip ci]"
           git push
-        env:
-          VERSION: $(echo "${{ github.event.comment.body }}" | cut -d' ' -f2)
