@@ -12,6 +12,9 @@
   "oneOf": [
     {
       "$ref": "./events/pagetrack.json"
+    },
+    {
+      "$ref": "./events/radar.json"
     }
   ]
 }

@@ -3,13 +3,7 @@
   "$id": "https://tracking-docs-demo.buchert.digital/schemas/1.0.1/events/pagetrack.json",
   "title": "pagetrack",
   "description": "Page related information provided idealy as a starting event for every page_view",
-  "x-tracking-targets": [
-    "web-datalayer-js",
-    "android-firebase-kotlin-sdk",
-    "android-firebase-java-sdk",
-    "ios-firebase-swift-sdk",
-    "ios-firebase-objc-sdk"
-  ],
+  "x-tracking-targets": ["web-datalayer-js"],
   "type": "object",
   "properties": {
     "$schema": {
@@ -25,33 +19,18 @@
     "mobileWebType": {
       "type": "string",
       "description": "Defines the type of webpage. Either web-app-react or old",
-      "examples": [
-        "web-app-react",
-        "old"
-      ]
+      "examples": ["web-app-react", "old"]
     },
     "pageCountry": {
       "type": "string",
       "description": "The country for the website",
-      "enum": [
-        "de",
-        "at",
-        "ch"
-      ]
+      "enum": ["de", "at", "ch"]
     },
     "pageName": {
       "type": "string",
       "description": "The name of the page.",
-      "examples": [
-        "main"
-      ]
+      "examples": ["main"]
     }
   },
-  "required": [
-    "$schema",
-    "event",
-    "mobileWebType",
-    "pageCountry",
-    "pageName"
-  ]
+  "required": ["$schema", "event", "mobileWebType", "pageCountry", "pageName"]
 }
