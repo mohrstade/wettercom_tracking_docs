@@ -3,6 +3,13 @@
   "$id": "https://tracking-docs-demo.buchert.digital/schemas/1.0.1/events/pagetrack.json",
   "title": "pagetrack",
   "description": "Page related information provided idealy as a starting event for every page_view",
+  "x-tracking-targets": [
+    "web-datalayer-js",
+    "android-firebase-kotlin-sdk",
+    "android-firebase-java-sdk",
+    "ios-firebase-swift-sdk",
+    "ios-firebase-objc-sdk"
+  ],
   "type": "object",
   "properties": {
     "$schema": {
