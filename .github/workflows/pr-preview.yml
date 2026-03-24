@@ -43,7 +43,9 @@ jobs:
         run: npm run gen-docs
 
       - name: Build with PR base URL
-        run: npm --prefix docs run build -- --baseUrl /pr-${{ github.event.number }}/
+        run: npm run build
+        env:
+          DOCUSAURUS_BASE_URL: /pr-${{ github.event.number }}/
 
       - name: Authenticate to Google Cloud
         uses: google-github-actions/auth@v2
