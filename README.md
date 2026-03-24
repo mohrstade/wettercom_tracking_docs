@@ -13,6 +13,12 @@ wettercom_tracking_docs/
     └── workflows/  # CI, deploy, and PR commands
 ```
 
+## Documentation
+
+The tracking documentation site is live at **https://tracking.wetter.com**.
+
+For a guide on adding and editing tracking events, see the [Quick Start](https://tracking.wetter.com/quick-start).
+
 ## Getting Started
 
 Install dependencies and start the local dev server:
