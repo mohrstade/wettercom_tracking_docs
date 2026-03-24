@@ -1,0 +1,32 @@
+---
+title: slider_move
+description: "Fired when the user drags the time slider on the maps / radar screen to scrub through the precipitation forecast."
+sidebar_label: slider_move
+custom_edit_url: https://github.com/benedikt-buchert/tracking_docs/edit/main/docs/static/schemas/next/events/app/slider_move.json
+---
+
+import SchemaViewer from '@theme/SchemaViewer';
+import SchemaJsonViewer from '@theme/SchemaJsonViewer';
+import TopPartial from '@site/docs/partials/app-event-reference/_slider_move.mdx';
+
+
+# slider_move
+
+Fired when the user drags the time slider on the maps / radar screen to scrub through the precipitation forecast.
+
+<TopPartial />
+
+<SchemaViewer
+  schema={{"$schema":"https://json-schema.org/draft/2020-12/schema","$id":"https://tracking.wetter.com/schemas/next/events/app/slider_move.json","title":"slider_move","description":"Fired when the user drags the time slider on the maps / radar screen to scrub through the precipitation forecast.","type":"object","x-tracking-targets":["android-firebase-kotlin-sdk","android-firebase-java-sdk","ios-firebase-swift-sdk","ios-firebase-objc-sdk"],"required":["event","eventAction","eventCategory"],"properties":{"event":{"type":"string","const":"event","description":"Fixed value indicating a generic interaction event."},"eventAction":{"type":"string","const":"slider_move","description":"The specific action performed."},"eventCategory":{"type":"string","description":"The feature area where the interaction occurred.","examples":["maps"]}}}}
+  sourceSchema={{"$schema":"https://json-schema.org/draft/2020-12/schema","$id":"https://tracking.wetter.com/schemas/next/events/app/slider_move.json","title":"slider_move","description":"Fired when the user drags the time slider on the maps / radar screen to scrub through the precipitation forecast.","x-tracking-targets":["android-firebase-kotlin-sdk","android-firebase-java-sdk","ios-firebase-swift-sdk","ios-firebase-objc-sdk"],"type":"object","properties":{"event":{"type":"string","const":"event","description":"Fixed value indicating a generic interaction event."},"eventAction":{"type":"string","const":"slider_move","description":"The specific action performed."},"eventCategory":{"type":"string","description":"The feature area where the interaction occurred.","examples":["maps"]}},"required":["event","eventAction","eventCategory"]}}
+  sourcePath={"events/app/slider_move.json"}
+  schemaSources={{"events/app/slider_move.json":{"$schema":"https://json-schema.org/draft/2020-12/schema","$id":"https://tracking.wetter.com/schemas/next/events/app/slider_move.json","title":"slider_move","description":"Fired when the user drags the time slider on the maps / radar screen to scrub through the precipitation forecast.","x-tracking-targets":["android-firebase-kotlin-sdk","android-firebase-java-sdk","ios-firebase-swift-sdk","ios-firebase-objc-sdk"],"type":"object","properties":{"event":{"type":"string","const":"event","description":"Fixed value indicating a generic interaction event."},"eventAction":{"type":"string","const":"slider_move","description":"The specific action performed."},"eventCategory":{"type":"string","description":"The feature area where the interaction occurred.","examples":["maps"]}},"required":["event","eventAction","eventCategory"]}}}
+  
+/>
+<SchemaJsonViewer
+  schema={{"$schema":"https://json-schema.org/draft/2020-12/schema","$id":"https://tracking.wetter.com/schemas/next/events/app/slider_move.json","title":"slider_move","description":"Fired when the user drags the time slider on the maps / radar screen to scrub through the precipitation forecast.","type":"object","x-tracking-targets":["android-firebase-kotlin-sdk","android-firebase-java-sdk","ios-firebase-swift-sdk","ios-firebase-objc-sdk"],"required":["event","eventAction","eventCategory"],"properties":{"event":{"type":"string","const":"event","description":"Fixed value indicating a generic interaction event."},"eventAction":{"type":"string","const":"slider_move","description":"The specific action performed."},"eventCategory":{"type":"string","description":"The feature area where the interaction occurred.","examples":["maps"]}}}}
+  sourcePath={"events/app/slider_move.json"}
+  schemaSources={{"events/app/slider_move.json":{"$schema":"https://json-schema.org/draft/2020-12/schema","$id":"https://tracking.wetter.com/schemas/next/events/app/slider_move.json","title":"slider_move","description":"Fired when the user drags the time slider on the maps / radar screen to scrub through the precipitation forecast.","x-tracking-targets":["android-firebase-kotlin-sdk","android-firebase-java-sdk","ios-firebase-swift-sdk","ios-firebase-objc-sdk"],"type":"object","properties":{"event":{"type":"string","const":"event","description":"Fixed value indicating a generic interaction event."},"eventAction":{"type":"string","const":"slider_move","description":"The specific action performed."},"eventCategory":{"type":"string","description":"The feature area where the interaction occurred.","examples":["maps"]}},"required":["event","eventAction","eventCategory"]}}}
+/>
+
+

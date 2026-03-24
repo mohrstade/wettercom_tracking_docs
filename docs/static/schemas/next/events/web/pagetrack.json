@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://tracking-docs-demo.buchert.digital/schemas/1.0.1/events/pagetrack.json",
+  "$id": "https://tracking.wetter.com/schemas/events/web/pagetrack.json",
   "title": "pagetrack",
   "description": "Page related information provided idealy as a starting event for every page_view",
   "x-tracking-targets": ["web-datalayer-js"],
@@ -8,7 +8,7 @@
   "properties": {
     "$schema": {
       "description": "Defines the structure of the event. This can be used to validate an event against the schema provided.",
-      "const": "https://tracking-docs-demo.buchert.digital/schemas/events/pagetrack.json",
+      "const": "https://tracking.wetter.com/schemas/events/web/pagetrack.json",
       "type": "string"
     },
     "event": {
@@ -24,7 +24,8 @@
     "pageCountry": {
       "type": "string",
       "description": "The country for the website",
-      "enum": ["de", "at", "ch"]
+      "enum": ["de", "at", "ch"],
+      "examples": ["de"]
     },
     "pageName": {
       "type": "string",

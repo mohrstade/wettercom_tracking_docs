@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://tracking.wetter.com/schemas/events/app/screenview.json",
+  "title": "screenview",
+  "description": "Custom screen view event fired on every screen navigation. Contains both screen name and screen class. **Always use this event for analysis** — disregard the automatic `screen_view` event fired by Firebase.",
+  "x-tracking-targets": [
+    "android-firebase-kotlin-sdk",
+    "android-firebase-java-sdk",
+    "ios-firebase-swift-sdk",
+    "ios-firebase-objc-sdk"
+  ],
+  "type": "object",
+  "properties": {
+    "event": {
+      "type": "string",
+      "const": "screenview",
+      "description": "The event name."
+    },
+    "ScreenName": {
+      "type": "string",
+      "description": "The internal name of the screen. See the screen reference table below for known values.",
+      "examples": ["forecast", "maps", "locations", "onboarding"]
+    },
+    "ScreenClass": {
+      "type": "string",
+      "description": "The screen class. Typically matches ScreenName, with the exception of `videos-detail` where ScreenClass is `videos-details`.",
+      "examples": ["forecast", "maps", "locations", "onboarding"]
+    },
+    "CountryID": {
+      "type": "string",
+      "description": "The country context of the current screen.",
+      "examples": ["DE", "AT", "CH"]
+    },
+    "PageCity": {
+      "type": "string",
+      "description": "The city associated with the currently displayed weather location.",
+      "examples": ["Schwabing", "Vienna"]
+    },
+    "PageCountry": {
+      "type": "string",
+      "description": "The country associated with the currently displayed weather location.",
+      "examples": ["DE", "AT", "CH"]
+    },
+    "PageId": {
+      "type": "string",
+      "description": "The unique identifier for the displayed weather location page.",
+      "examples": ["DE0006515195"]
+    },
+    "ScreenTitle": {
+      "type": "string",
+      "description": "The human-readable title of the screen, typically including location path.",
+      "examples": ["DE//80801/Schwabing"]
+    }
+  },
+  "required": ["event", "ScreenName", "ScreenClass"]
+}

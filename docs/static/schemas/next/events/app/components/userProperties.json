@@ -1,0 +1,164 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://tracking.wetter.com/schemas/events/app/components/userProperties.json",
+  "title": "User Properties",
+  "description": "Firebase user properties sent automatically with every app event. These describe the user's device state, settings, and session context. They are set once per session and do not need to be defined per-event.",
+  "type": "object",
+  "properties": {
+    "ATT": {
+      "type": "string",
+      "description": "iOS App Tracking Transparency authorization status.",
+      "examples": ["deniedGlobal", "authorized", "denied", "notDetermined"]
+    },
+    "ActivatedPush": {
+      "type": "string",
+      "description": "Whether the user has enabled push notifications.",
+      "examples": ["true", "false"]
+    },
+    "ActivatedVoiceover": {
+      "type": "string",
+      "description": "Whether VoiceOver / TalkBack accessibility feature is active.",
+      "examples": ["true", "false"]
+    },
+    "AdTargetId": {
+      "type": "string",
+      "description": "Internal ad targeting group identifier.",
+      "examples": ["4"]
+    },
+    "AdditionalModuls": {
+      "type": "string",
+      "description": "Whether the user has additional modules enabled.",
+      "examples": ["true", "false"]
+    },
+    "AppIcon": {
+      "type": "string",
+      "description": "The currently selected app icon variant.",
+      "examples": ["InternationalAppIcon", "DefaultAppIcon"]
+    },
+    "AutomaticLocation": {
+      "type": "string",
+      "description": "Location permission status for automatic location detection.",
+      "examples": ["notDetermined", "authorized", "denied"]
+    },
+    "ComplicationInstalled": {
+      "type": "string",
+      "description": "Whether a watchOS complication is installed.",
+      "examples": ["true", "false"]
+    },
+    "ControlGroup": {
+      "type": "string",
+      "description": "Whether the user is in an A/B test control group.",
+      "examples": ["true", "false"]
+    },
+    "GeoAccuracy": {
+      "type": "string",
+      "description": "The granted location accuracy level.",
+      "examples": ["fullAccuracy", "reducedAccuracy"]
+    },
+    "LockscreenWidgetCount": {
+      "type": "string",
+      "description": "Number of lock screen widgets installed by the user.",
+      "examples": ["0", "1", "2"]
+    },
+    "MessageExtUsedEver": {
+      "type": "string",
+      "description": "Whether the iMessage extension has ever been used.",
+      "examples": ["true", "false"]
+    },
+    "NetatmoConnected": {
+      "type": "string",
+      "description": "Whether the user has a Netatmo device connected.",
+      "examples": ["true", "false"]
+    },
+    "PollenCustomized": {
+      "type": "string",
+      "description": "Whether the user has customized pollen filter settings.",
+      "examples": ["true", "false"]
+    },
+    "PollenPushSubscribed": {
+      "type": "string",
+      "description": "Pollen push subscription state, encoded as a version string.",
+      "examples": ["0_0_0"]
+    },
+    "PurchasedAdFree": {
+      "type": "string",
+      "description": "Whether the user has purchased the ad-free version.",
+      "examples": ["true", "false"]
+    },
+    "Theme": {
+      "type": "string",
+      "description": "The active UI theme.",
+      "examples": ["system_light", "system_dark", "light", "dark"]
+    },
+    "WatchAppInstalled": {
+      "type": "string",
+      "description": "Whether the Apple Watch companion app is installed.",
+      "examples": ["true", "false"]
+    },
+    "adjustID": {
+      "type": "string",
+      "description": "The Adjust attribution identifier for this installation.",
+      "examples": ["a901dc85cfd4e527c2921bae993d5105"]
+    },
+    "buildNumber": {
+      "type": "string",
+      "description": "The app build number.",
+      "examples": ["1247"]
+    },
+    "editorialPushEnabled": {
+      "type": "string",
+      "description": "Whether editorial push notifications are enabled.",
+      "examples": ["true", "false"]
+    },
+    "first_open_after_install": {
+      "type": "string",
+      "description": "Whether this session is the first open after a fresh install.",
+      "examples": ["1", "0"]
+    },
+    "first_open_time": {
+      "type": "string",
+      "description": "Unix timestamp in milliseconds of the first app open.",
+      "examples": ["1746691200000"]
+    },
+    "ga_session_id": {
+      "type": "string",
+      "description": "The current Firebase Analytics session ID.",
+      "examples": ["1774353380"]
+    },
+    "ga_session_number": {
+      "type": "string",
+      "description": "The sequential session number for this user.",
+      "examples": ["26"]
+    },
+    "install_id": {
+      "type": "string",
+      "description": "Unique identifier for this app installation.",
+      "examples": ["F0B9BB59-6A56-4007-BC06-B1E44BA89682"]
+    },
+    "last_consent_action_ts": {
+      "type": "string",
+      "description": "Timestamp of the last consent action taken by the user.",
+      "examples": ["2026-03-24 12:57 +01:00"]
+    },
+    "lifetime_user_engagement": {
+      "type": "string",
+      "description": "Total user engagement time in milliseconds across all sessions.",
+      "examples": ["1205070"]
+    },
+    "non_personalized_ads": {
+      "type": "string",
+      "description": "Whether non-personalized ads are enabled (0 = personalized, 1 = non-personalized).",
+      "examples": ["0", "1"]
+    },
+    "session_user_engagement": {
+      "type": "string",
+      "description": "User engagement time in milliseconds for the current session.",
+      "examples": ["49220"]
+    },
+    "systemPermissionPush": {
+      "type": "string",
+      "description": "Whether the OS-level push notification permission is granted.",
+      "examples": ["true", "false"]
+    }
+  }
+}

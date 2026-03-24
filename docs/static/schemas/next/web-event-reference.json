@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://tracking.wetter.com/schemas/web-event-reference.json",
+  "title": "Web Event Reference",
+  "description": "Documents all web events",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "./events/web/components/dataLayer.json"
+    }
+  ],
+  "oneOf": [
+    {
+      "$ref": "./events/web/pagetrack.json"
+    },
+    {
+      "$ref": "./events/web/radar.json"
+    }
+  ]
+}

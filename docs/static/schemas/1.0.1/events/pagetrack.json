@@ -19,33 +19,18 @@
     "mobileWebType": {
       "type": "string",
       "description": "Defines the type of webpage. Either web-app-react or old",
-      "examples": [
-        "web-app-react",
-        "old"
-      ]
+      "examples": ["web-app-react", "old"]
     },
     "pageCountry": {
       "type": "string",
       "description": "The country for the website",
-      "enum": [
-        "de",
-        "at",
-        "ch"
-      ]
+      "enum": ["de", "at", "ch"]
     },
     "pageName": {
       "type": "string",
       "description": "The name of the page.",
-      "examples": [
-        "main"
-      ]
+      "examples": ["main"]
     }
   },
-  "required": [
-    "$schema",
-    "event",
-    "mobileWebType",
-    "pageCountry",
-    "pageName"
-  ]
+  "required": ["$schema", "event", "mobileWebType", "pageCountry", "pageName"]
 }
