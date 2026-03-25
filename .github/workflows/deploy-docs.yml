@@ -55,4 +55,4 @@ jobs:
 
       - name: Upload to GCS
         run: |
-          gsutil -m rsync -r -d docs/build/ gs://${{ secrets.GCS_BUCKET }}/
+          gsutil -m rsync -r docs/build/ gs://wettercom-bi-tracking-docs-site/
