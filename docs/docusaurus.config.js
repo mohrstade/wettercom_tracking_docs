@@ -27,7 +27,7 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'wetter.com', // Usually your GitHub org/user name.
+  organizationName: 'mohrstade', // Usually your GitHub org/user name.
   projectName: 'wettercom_tracking_docs', // Usually your repo name.
 
   onBrokenLinks: 'throw',
