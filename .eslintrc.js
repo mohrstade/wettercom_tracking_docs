@@ -1,5 +1,9 @@
 module.exports = {
   plugins: ['tracking-schema'],
+  parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+  },
   overrides: [
     {
       files: ['docs/static/schemas/**/*.json'],

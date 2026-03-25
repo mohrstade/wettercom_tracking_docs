@@ -1,7 +1,7 @@
 ---
 title: App Event Reference
 description: "Firebase Analytics events tracked in the wetter.com mobile apps (iOS & Android)."
-custom_edit_url: https://github.com/benedikt-buchert/tracking_docs/edit/main/docs/static/schemas/next/app-event-reference.json
+custom_edit_url: https://github.com/benedikt-buchert/tracking_docs/edit/main/docs/static/schemas/1.0.1/app-event-reference.json
 ---
 
 import SchemaJsonViewer from "@theme/SchemaJsonViewer";
@@ -19,7 +19,7 @@ Please select one of the following options:
 <SchemaJsonViewer
   schema={{
     $schema: "https://json-schema.org/draft/2020-12/schema",
-    $id: "https://tracking-docs-demo.buchert.digital/schemas/next/app-event-reference.json",
+    $id: "https://tracking-docs-demo.buchert.digital/schemas/1.0.1/app-event-reference.json",
     title: "App Event Reference",
     description:
       "Firebase Analytics events tracked in the wetter.com mobile apps (iOS & Android).",
@@ -34,7 +34,7 @@ Please select one of the following options:
   schemaSources={{
     "app-event-reference.json": {
       $schema: "https://json-schema.org/draft/2020-12/schema",
-      $id: "https://tracking.wetter.com/schemas/app-event-reference.json",
+      $id: "https://tracking-docs-demo.buchert.digital/schemas/1.0.1/app-event-reference.json",
       title: "App Event Reference",
       description:
         "Firebase Analytics events tracked in the wetter.com mobile apps (iOS & Android).",
@@ -47,7 +47,7 @@ Please select one of the following options:
     },
     "events/app/screenview.json": {
       $schema: "https://json-schema.org/draft/2020-12/schema",
-      $id: "https://tracking.wetter.com/schemas/events/app/screenview.json",
+      $id: "https://tracking-docs-demo.buchert.digital/schemas/1.0.1/events/app/screenview.json",
       title: "screenview",
       description:
         "Custom screen view event fired on every screen navigation. Contains both screen name and screen class. **Always use this event for analysis** — disregard the automatic `screen_view` event fired by Firebase.",
@@ -110,7 +110,7 @@ Please select one of the following options:
     },
     "events/app/screen_view.json": {
       $schema: "https://json-schema.org/draft/2020-12/schema",
-      $id: "https://tracking.wetter.com/schemas/events/app/screen_view.json",
+      $id: "https://tracking-docs-demo.buchert.digital/schemas/1.0.1/events/app/screen_view.json",
       title: "screen_view",
       description:
         "Automatically fired by the Firebase SDK when a screen transition occurs. Contains only screen class — no screen name.",
@@ -138,7 +138,7 @@ Please select one of the following options:
     },
     "events/app/slider_move.json": {
       $schema: "https://json-schema.org/draft/2020-12/schema",
-      $id: "https://tracking.wetter.com/schemas/events/app/slider_move.json",
+      $id: "https://tracking-docs-demo.buchert.digital/schemas/1.0.1/events/app/slider_move.json",
       title: "slider_move",
       description:
         "Fired when the user drags the time slider on the maps / radar screen to scrub through the precipitation forecast.",

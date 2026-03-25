@@ -4,5 +4,4 @@ node_modules/
 .docusaurus/
 docs/.docusaurus/
 __mocks__/
-docs/**/*.js
 scripts/
