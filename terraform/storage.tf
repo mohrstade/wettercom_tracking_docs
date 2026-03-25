@@ -9,6 +9,19 @@ resource "google_storage_bucket" "site" {
     not_found_page   = "404.html"
   }
 
+  # Delete PR preview objects 30 days after the PR is closed.
+  # custom_time is only set on PR close (see pr-preview.yml mark-closed job),
+  # so open-PR previews are never affected by this rule.
+  lifecycle_rule {
+    condition {
+      days_since_custom_time = 30
+      matches_prefix         = ["pr-"]
+    }
+    action {
+      type = "Delete"
+    }
+  }
+
   depends_on = [google_project_service.apis]
 }
 
