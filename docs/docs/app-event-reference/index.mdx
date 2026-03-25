@@ -3,7 +3,8 @@ title: App Event Reference
 description: "Firebase Analytics events tracked in the wetter.com mobile apps (iOS & Android)."
 custom_edit_url: https://github.com/wetter.com/wettercom_tracking_docs/edit/main/docs/static/schemas/next/app-event-reference.json
 ---
-import SchemaJsonViewer from '@theme/SchemaJsonViewer';
+
+import SchemaJsonViewer from "@theme/SchemaJsonViewer";
 
 # App Event Reference
 
@@ -16,7 +17,156 @@ Please select one of the following options:
 - [slider_move](./slider_move)
 
 <SchemaJsonViewer
-  schema={{"$schema":"https://json-schema.org/draft/2020-12/schema","$id":"https://tracking.wetter.com/schemas/next/app-event-reference.json","title":"App Event Reference","description":"Firebase Analytics events tracked in the wetter.com mobile apps (iOS & Android).","type":"object","oneOf":[{"$ref":"./events/app/screenview.json"},{"$ref":"./events/app/screen_view.json"},{"$ref":"./events/app/slider_move.json"}]}}
+  schema={{
+    $schema: "https://json-schema.org/draft/2020-12/schema",
+    $id: "https://tracking.wetter.com/schemas/next/app-event-reference.json",
+    title: "App Event Reference",
+    description:
+      "Firebase Analytics events tracked in the wetter.com mobile apps (iOS & Android).",
+    type: "object",
+    oneOf: [
+      { $ref: "./events/app/screenview.json" },
+      { $ref: "./events/app/screen_view.json" },
+      { $ref: "./events/app/slider_move.json" },
+    ],
+  }}
   sourcePath={"app-event-reference.json"}
-  schemaSources={{"app-event-reference.json":{"$schema":"https://json-schema.org/draft/2020-12/schema","$id":"https://tracking.wetter.com/schemas/app-event-reference.json","title":"App Event Reference","description":"Firebase Analytics events tracked in the wetter.com mobile apps (iOS & Android).","type":"object","oneOf":[{"$ref":"./events/app/screenview.json"},{"$ref":"./events/app/screen_view.json"},{"$ref":"./events/app/slider_move.json"}]},"events/app/screenview.json":{"$schema":"https://json-schema.org/draft/2020-12/schema","$id":"https://tracking.wetter.com/schemas/events/app/screenview.json","title":"screenview","description":"Custom screen view event fired on every screen navigation. Contains both screen name and screen class. **Always use this event for analysis** — disregard the automatic `screen_view` event fired by Firebase.","x-tracking-targets":["android-firebase-kotlin-sdk","android-firebase-java-sdk","ios-firebase-swift-sdk","ios-firebase-objc-sdk"],"type":"object","properties":{"event":{"type":"string","const":"screenview","description":"The event name."},"ScreenName":{"type":"string","description":"The internal name of the screen. See the screen reference table below for known values.","examples":["forecast","maps","locations","onboarding"]},"ScreenClass":{"type":"string","description":"The screen class. Typically matches ScreenName, with the exception of `videos-detail` where ScreenClass is `videos-details`.","examples":["forecast","maps","locations","onboarding"]},"CountryID":{"type":"string","description":"The country context of the current screen.","examples":["DE","AT","CH"]},"PageCity":{"type":"string","description":"The city associated with the currently displayed weather location.","examples":["Schwabing","Vienna"]},"PageCountry":{"type":"string","description":"The country associated with the currently displayed weather location.","examples":["DE","AT","CH"]},"PageId":{"type":"string","description":"The unique identifier for the displayed weather location page.","examples":["DE0006515195"]},"ScreenTitle":{"type":"string","description":"The human-readable title of the screen, typically including location path.","examples":["DE//80801/Schwabing"]}},"required":["event","ScreenName","ScreenClass"]},"events/app/screen_view.json":{"$schema":"https://json-schema.org/draft/2020-12/schema","$id":"https://tracking.wetter.com/schemas/events/app/screen_view.json","title":"screen_view","description":"Automatically fired by the Firebase SDK when a screen transition occurs. Contains only screen class — no screen name.","x-tracking-targets":["android-firebase-kotlin-sdk","android-firebase-java-sdk","ios-firebase-swift-sdk","ios-firebase-objc-sdk"],"type":"object","properties":{"event":{"type":"string","const":"screen_view","description":"The Firebase event name."},"manual_tracking":{"type":"integer","const":1,"description":"Set to 1 by app code when the screen_view is triggered manually (as opposed to automatic SDK tracking)."}},"required":["event"]},"events/app/slider_move.json":{"$schema":"https://json-schema.org/draft/2020-12/schema","$id":"https://tracking.wetter.com/schemas/events/app/slider_move.json","title":"slider_move","description":"Fired when the user drags the time slider on the maps / radar screen to scrub through the precipitation forecast.","x-tracking-targets":["android-firebase-kotlin-sdk","android-firebase-java-sdk","ios-firebase-swift-sdk","ios-firebase-objc-sdk"],"type":"object","properties":{"event":{"type":"string","const":"event","description":"Fixed value indicating a generic interaction event."},"eventAction":{"type":"string","const":"slider_move","description":"The specific action performed."},"eventCategory":{"type":"string","description":"The feature area where the interaction occurred.","examples":["maps"]}},"required":["event","eventAction","eventCategory"]}}}
+  schemaSources={{
+    "app-event-reference.json": {
+      $schema: "https://json-schema.org/draft/2020-12/schema",
+      $id: "https://tracking.wetter.com/schemas/app-event-reference.json",
+      title: "App Event Reference",
+      description:
+        "Firebase Analytics events tracked in the wetter.com mobile apps (iOS & Android).",
+      type: "object",
+      oneOf: [
+        { $ref: "./events/app/screenview.json" },
+        { $ref: "./events/app/screen_view.json" },
+        { $ref: "./events/app/slider_move.json" },
+      ],
+    },
+    "events/app/screenview.json": {
+      $schema: "https://json-schema.org/draft/2020-12/schema",
+      $id: "https://tracking.wetter.com/schemas/events/app/screenview.json",
+      title: "screenview",
+      description:
+        "Custom screen view event fired on every screen navigation. Contains both screen name and screen class. **Always use this event for analysis** — disregard the automatic `screen_view` event fired by Firebase.",
+      "x-tracking-targets": [
+        "android-firebase-kotlin-sdk",
+        "android-firebase-java-sdk",
+        "ios-firebase-swift-sdk",
+        "ios-firebase-objc-sdk",
+      ],
+      type: "object",
+      properties: {
+        event: {
+          type: "string",
+          const: "screenview",
+          description: "The event name.",
+        },
+        ScreenName: {
+          type: "string",
+          description:
+            "The internal name of the screen. See the screen reference table below for known values.",
+          examples: ["forecast", "maps", "locations", "onboarding"],
+        },
+        ScreenClass: {
+          type: "string",
+          description:
+            "The screen class. Typically matches ScreenName, with the exception of `videos-detail` where ScreenClass is `videos-details`.",
+          examples: ["forecast", "maps", "locations", "onboarding"],
+        },
+        CountryID: {
+          type: "string",
+          description: "The country context of the current screen.",
+          examples: ["DE", "AT", "CH"],
+        },
+        PageCity: {
+          type: "string",
+          description:
+            "The city associated with the currently displayed weather location.",
+          examples: ["Schwabing", "Vienna"],
+        },
+        PageCountry: {
+          type: "string",
+          description:
+            "The country associated with the currently displayed weather location.",
+          examples: ["DE", "AT", "CH"],
+        },
+        PageId: {
+          type: "string",
+          description:
+            "The unique identifier for the displayed weather location page.",
+          examples: ["DE0006515195"],
+        },
+        ScreenTitle: {
+          type: "string",
+          description:
+            "The human-readable title of the screen, typically including location path.",
+          examples: ["DE//80801/Schwabing"],
+        },
+      },
+      required: ["event", "ScreenName", "ScreenClass"],
+    },
+    "events/app/screen_view.json": {
+      $schema: "https://json-schema.org/draft/2020-12/schema",
+      $id: "https://tracking.wetter.com/schemas/events/app/screen_view.json",
+      title: "screen_view",
+      description:
+        "Automatically fired by the Firebase SDK when a screen transition occurs. Contains only screen class — no screen name.",
+      "x-tracking-targets": [
+        "android-firebase-kotlin-sdk",
+        "android-firebase-java-sdk",
+        "ios-firebase-swift-sdk",
+        "ios-firebase-objc-sdk",
+      ],
+      type: "object",
+      properties: {
+        event: {
+          type: "string",
+          const: "screen_view",
+          description: "The Firebase event name.",
+        },
+        manual_tracking: {
+          type: "integer",
+          const: 1,
+          description:
+            "Set to 1 by app code when the screen_view is triggered manually (as opposed to automatic SDK tracking).",
+        },
+      },
+      required: ["event"],
+    },
+    "events/app/slider_move.json": {
+      $schema: "https://json-schema.org/draft/2020-12/schema",
+      $id: "https://tracking.wetter.com/schemas/events/app/slider_move.json",
+      title: "slider_move",
+      description:
+        "Fired when the user drags the time slider on the maps / radar screen to scrub through the precipitation forecast.",
+      "x-tracking-targets": [
+        "android-firebase-kotlin-sdk",
+        "android-firebase-java-sdk",
+        "ios-firebase-swift-sdk",
+        "ios-firebase-objc-sdk",
+      ],
+      type: "object",
+      properties: {
+        event: {
+          type: "string",
+          const: "event",
+          description: "Fixed value indicating a generic interaction event.",
+        },
+        eventAction: {
+          type: "string",
+          const: "slider_move",
+          description: "The specific action performed.",
+        },
+        eventCategory: {
+          type: "string",
+          description: "The feature area where the interaction occurred.",
+          examples: ["maps"],
+        },
+      },
+      required: ["event", "eventAction", "eventCategory"],
+    },
+  }}
 />
