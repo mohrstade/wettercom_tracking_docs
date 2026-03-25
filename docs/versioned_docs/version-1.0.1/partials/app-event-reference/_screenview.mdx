@@ -1,38 +1,42 @@
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+export const Screen = ({name}) => <img src={useBaseUrl(`/img/app-screens/${name}.jpg`)} alt={name} width="120" />;
+
 ## Screen Reference
 
 The table below lists all valid `ScreenName` / `ScreenClass` values and the screen they correspond to.
 
-| Screenshot                                                                                                 | ScreenName                   | ScreenClass                  | Description                                          |
-| ---------------------------------------------------------------------------------------------------------- | ---------------------------- | ---------------------------- | ---------------------------------------------------- |
-| <img src="/img/app-screens/locations.jpg" alt="locations" width="120" />                                   | `locations`                  | `locations`                  | List of all saved locations                          |
-| <img src="/img/app-screens/push_prompt_view.jpg" alt="push_prompt_view" width="120" />                     | `push_prompt_view`           | `push_prompt_view`           | Permission prompt for push notifications             |
-| <img src="/img/app-screens/forecast.jpg" alt="forecast" width="120" />                                     | `forecast`                   | `forecast`                   | Forecast for a specific location                     |
-| <img src="/img/app-screens/maps.jpg" alt="maps" width="120" />                                             | `maps`                       | `maps`                       | Radar / weather map for a specific location          |
-| <img src="/img/app-screens/forecast-day-hourly.jpg" alt="forecast-day-hourly" width="120" />               | `forecast-day-hourly`        | `forecast-day-hourly`        | 48-hour hourly forecast                              |
-| <img src="/img/app-screens/forecast-day-graph-hourly.jpg" alt="forecast-day-graph-hourly" width="120" />   | `forecast-day-graph-hourly`  | `forecast-day-graph-hourly`  | 48-hour forecast as graph                            |
-| <img src="/img/app-screens/forecast-day-detail.jpg" alt="forecast-day-detail" width="120" />               | `forecast-day-detail`        | `forecast-day-detail`        | 7-day forecast                                       |
-| <img src="/img/app-screens/forecast-day-graph-detail.jpg" alt="forecast-day-graph-detail" width="120" />   | `forecast-day-graph-detail`  | `forecast-day-graph-detail`  | 7-day forecast as graph                              |
-| <img src="/img/app-screens/forecast-day-outlook.jpg" alt="forecast-day-outlook" width="120" />             | `forecast-day-outlook`       | `forecast-day-outlook`       | 16-day forecast                                      |
-| <img src="/img/app-screens/forecast-day-graph-outlook.jpg" alt="forecast-day-graph-outlook" width="120" /> | `forecast-day-graph-outlook` | `forecast-day-graph-outlook` | 16-day forecast as graph                             |
-| <img src="/img/app-screens/search-locate.jpg" alt="search-locate" width="120" />                           | `search-locate`              | `search-locate`              | Automatic location search (nearby)                   |
-| <img src="/img/app-screens/search-permissions.jpg" alt="search-permissions" width="120" />                 | `search-permissions`         | `search-permissions`         | Location search after declining location permissions |
-| <img src="/img/app-screens/livecam-location.jpg" alt="livecam-location" width="120" />                     | `livecam-location`           | `livecam-location`           | Live camera feed for a location                      |
-| <img src="/img/app-screens/livecam-detail.jpg" alt="livecam-detail" width="120" />                         | `livecam-detail`             | `livecam-detail`             | Watching a live camera                               |
-| <img src="/img/app-screens/livecam-main.jpg" alt="livecam-main" width="120" />                             | `livecam-main`               | `livecam-main`               | Live cameras main menu entry                         |
-| <img src="/img/app-screens/pollen.jpg" alt="pollen" width="120" />                                         | `pollen`                     | `pollen`                     | Pollen pollution view                                |
-| <img src="/img/app-screens/settings.jpg" alt="settings" width="120" />                                     | `settings`                   | `settings`                   | Settings main view                                   |
-| <img src="/img/app-screens/imprint.jpg" alt="imprint" width="120" />                                       | `imprint`                    | `imprint`                    | Imprint                                              |
-| <img src="/img/app-screens/privacy.jpg" alt="privacy" width="120" />                                       | `privacy`                    | `privacy`                    | Privacy policy                                       |
-| <img src="/img/app-screens/privacy-settings.jpg" alt="privacy-settings" width="120" />                     | `privacy-settings`           | `privacy-settings`           | Privacy settings                                     |
-| <img src="/img/app-screens/licenses.jpg" alt="licenses" width="120" />                                     | `licenses`                   | `licenses`                   | Open source licenses                                 |
-| <img src="/img/app-screens/videos-location.jpg" alt="videos-location" width="120" />                       | `videos-location`            | `videos-location`            | Video tab in favourites                              |
-| <img src="/img/app-screens/videos-detail.jpg" alt="videos-detail" width="120" />                           | `videos-detail`              | `videos-details`             | Video detail page                                    |
-| <img src="/img/app-screens/videos.jpg" alt="videos" width="120" />                                         | `videos`                     | `videos`                     | Videos main menu entry                               |
-| <img src="/img/app-screens/dynamic-hybrid.jpg" alt="dynamic-hybrid" width="120" />                         | `dynamic-hybrid`             | `dynamic-hybrid`             | Dynamic screen views for different pages             |
-| <img src="/img/app-screens/dynamic-hybrid-tab.jpg" alt="dynamic-hybrid-tab" width="120" />                 | `dynamic-hybrid-tab`         | `dynamic-hybrid-tab`         | Dynamic tabs for locations (e.g. Gartenwetter)       |
-| <img src="/img/app-screens/forecast-text.jpg" alt="forecast-text" width="120" />                           | `forecast-text`              | `forecast-text`              | Weather report (Wetterbericht)                       |
-| <img src="/img/app-screens/shop-premium.jpg" alt="shop-premium" width="120" />                             | `shop-premium`               | `shop-premium`               | Premium upgrade screen                               |
-| <img src="/img/app-screens/premium_slider-iconSets.jpg" alt="premium_slider-iconSets" width="120" />       | `premium_slider-iconSets`    | `premium_slider-iconSets`    | Icon sets slider in premium shop                     |
-| <img src="/img/app-screens/premium_slider-adFree.jpg" alt="premium_slider-adFree" width="120" />           | `premium_slider-adFree`      | `premium_slider-adFree`      | Ad-free slider in premium shop                       |
+| Screenshot                              | ScreenName                   | ScreenClass                  | Description                                          |
+| --------------------------------------- | ---------------------------- | ---------------------------- | ---------------------------------------------------- |
+| <Screen name="locations" />             | `locations`                  | `locations`                  | List of all saved locations                          |
+| <Screen name="push_prompt_view" />      | `push_prompt_view`           | `push_prompt_view`           | Permission prompt for push notifications             |
+| <Screen name="forecast" />              | `forecast`                   | `forecast`                   | Forecast for a specific location                     |
+| <Screen name="maps" />                  | `maps`                       | `maps`                       | Radar / weather map for a specific location          |
+| <Screen name="forecast-day-hourly" />   | `forecast-day-hourly`        | `forecast-day-hourly`        | 48-hour hourly forecast                              |
+| <Screen name="forecast-day-graph-hourly" /> | `forecast-day-graph-hourly`  | `forecast-day-graph-hourly`  | 48-hour forecast as graph                            |
+| <Screen name="forecast-day-detail" />   | `forecast-day-detail`        | `forecast-day-detail`        | 7-day forecast                                       |
+| <Screen name="forecast-day-graph-detail" /> | `forecast-day-graph-detail`  | `forecast-day-graph-detail`  | 7-day forecast as graph                              |
+| <Screen name="forecast-day-outlook" />  | `forecast-day-outlook`       | `forecast-day-outlook`       | 16-day forecast                                      |
+| <Screen name="forecast-day-graph-outlook" /> | `forecast-day-graph-outlook` | `forecast-day-graph-outlook` | 16-day forecast as graph                             |
+| <Screen name="search-locate" />         | `search-locate`              | `search-locate`              | Automatic location search (nearby)                   |
+| <Screen name="search-permissions" />    | `search-permissions`         | `search-permissions`         | Location search after declining location permissions |
+| <Screen name="livecam-location" />      | `livecam-location`           | `livecam-location`           | Live camera feed for a location                      |
+| <Screen name="livecam-detail" />        | `livecam-detail`             | `livecam-detail`             | Watching a live camera                               |
+| <Screen name="livecam-main" />          | `livecam-main`               | `livecam-main`               | Live cameras main menu entry                         |
+| <Screen name="pollen" />                | `pollen`                     | `pollen`                     | Pollen pollution view                                |
+| <Screen name="settings" />              | `settings`                   | `settings`                   | Settings main view                                   |
+| <Screen name="imprint" />               | `imprint`                    | `imprint`                    | Imprint                                              |
+| <Screen name="privacy" />               | `privacy`                    | `privacy`                    | Privacy policy                                       |
+| <Screen name="privacy-settings" />      | `privacy-settings`           | `privacy-settings`           | Privacy settings                                     |
+| <Screen name="licenses" />              | `licenses`                   | `licenses`                   | Open source licenses                                 |
+| <Screen name="videos-location" />       | `videos-location`            | `videos-location`            | Video tab in favourites                              |
+| <Screen name="videos-detail" />         | `videos-detail`              | `videos-details`             | Video detail page                                    |
+| <Screen name="videos" />                | `videos`                     | `videos`                     | Videos main menu entry                               |
+| <Screen name="dynamic-hybrid" />        | `dynamic-hybrid`             | `dynamic-hybrid`             | Dynamic screen views for different pages             |
+| <Screen name="dynamic-hybrid-tab" />    | `dynamic-hybrid-tab`         | `dynamic-hybrid-tab`         | Dynamic tabs for locations (e.g. Gartenwetter)       |
+| <Screen name="forecast-text" />         | `forecast-text`              | `forecast-text`              | Weather report (Wetterbericht)                       |
+| <Screen name="shop-premium" />          | `shop-premium`               | `shop-premium`               | Premium upgrade screen                               |
+| <Screen name="premium_slider-iconSets" /> | `premium_slider-iconSets`    | `premium_slider-iconSets`    | Icon sets slider in premium shop                     |
+| <Screen name="premium_slider-adFree" /> | `premium_slider-adFree`      | `premium_slider-adFree`      | Ad-free slider in premium shop                       |
 |                                                                                                            | `onboarding`                 | `onboarding`                 | First onboarding screen shown to new users           |
 |                                                                                                            | `cookie`                     | `cookie`                     | Cookie policy                                        |
