@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://tracking-docs-demo.buchert.digital/schemas/1.0.1/events/app/screenview.json",
+  "$id": "https://tracking.wetter.com/schemas/1.0.1/events/app/screenview.json",
   "title": "screenview",
   "description": "Custom screen view event fired on every screen navigation. Contains both screen name and screen class. **Always use this event for analysis** — disregard the automatic `screen_view` event fired by Firebase.",
   "x-tracking-targets": [

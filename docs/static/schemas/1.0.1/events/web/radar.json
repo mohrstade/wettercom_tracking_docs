@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://tracking-docs-demo.buchert.digital/schemas/1.0.1/events/web/radar.json",
+  "$id": "https://tracking.wetter.com/schemas/1.0.1/events/web/radar.json",
   "title": "radar",
   "description": "Covers radar events",
   "x-tracking-targets": ["web-datalayer-js"],

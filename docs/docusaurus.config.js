@@ -20,15 +20,15 @@ const config = {
   },
 
   // Set the production url of your site here
-  url: 'https://tracking-docs-demo.buchert.digital/',
+  url: 'https://tracking.wetter.com',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'benedikt-buchert', // Usually your GitHub org/user name.
-  projectName: 'tracking_docs', // Usually your repo name.
+  organizationName: 'wetter.com', // Usually your GitHub org/user name.
+  projectName: 'wettercom_tracking_docs', // Usually your repo name.
 
   onBrokenLinks: 'throw',
 

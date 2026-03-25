@@ -2,285 +2,31 @@
 title: pagetrack
 description: "Page related information provided idealy as a starting event for every page_view"
 sidebar_label: pagetrack
-custom_edit_url: https://github.com/benedikt-buchert/tracking_docs/edit/main/docs/static/schemas/next/events/web/pagetrack.json
+custom_edit_url: https://github.com/wetter.com/wettercom_tracking_docs/edit/main/docs/static/schemas/next/events/web/pagetrack.json
 ---
 
-import SchemaViewer from "@theme/SchemaViewer";
-import SchemaJsonViewer from "@theme/SchemaJsonViewer";
+import SchemaViewer from '@theme/SchemaViewer';
+import SchemaJsonViewer from '@theme/SchemaJsonViewer';
+
+
 
 # pagetrack
 
 Page related information provided idealy as a starting event for every page_view
 
+
+
 <SchemaViewer
-  schema={{
-    $schema: "https://json-schema.org/draft/2020-12/schema",
-    $id: "https://tracking.wetter.com/schemas/events/web/pagetrack.json",
-    title: "pagetrack",
-    description:
-      "Page related information provided idealy as a starting event for every page_view",
-    type: "object",
-    required: ["$schema", "event", "mobileWebType", "pageCountry", "pageName"],
-    $defs: {
-      strictObject: {
-        type: "object",
-        propertyNames: { maxLength: 40, pattern: "^(\\$schema)|[a-z0-9_]+$" },
-        additionalProperties: {
-          anyOf: [
-            { $ref: "#/allOf/0/$defs/strictObject" },
-            { type: "array", items: { $ref: "#/allOf/0/$defs/strictObject" } },
-            { not: { type: "object" } },
-          ],
-        },
-      },
-    },
-    $ref: "#/allOf/0/$defs/strictObject",
-    properties: {
-      event: {
-        type: "string",
-        description: "The name of the event.",
-        const: "pagetrack",
-      },
-      ecommerce: {
-        type: "object",
-        description: "Ecommerce related data.",
-        "x-gtm-clear": true,
-      },
-      user_data: {
-        type: "object",
-        description: "User related data.",
-        "x-gtm-clear": true,
-      },
-      $schema: {
-        description:
-          "Defines the structure of the event. This can be used to validate an event against the schema provided.",
-        const: "https://tracking.wetter.com/schemas/events/web/pagetrack.json",
-        type: "string",
-      },
-      mobileWebType: {
-        type: "string",
-        description: "Defines the type of webpage. Either web-app-react or old",
-        examples: ["web-app-react", "old"],
-      },
-      pageCountry: {
-        type: "string",
-        description: "The country for the website",
-        enum: ["de", "at", "ch"],
-        examples: ["de"],
-      },
-      pageName: {
-        type: "string",
-        description: "The name of the page.",
-        examples: ["main"],
-      },
-    },
-    "x-tracking-targets": ["web-datalayer-js"],
-  }}
-  sourceSchema={{
-    $schema: "https://json-schema.org/draft/2020-12/schema",
-    $id: "https://tracking.wetter.com/schemas/events/web/pagetrack.json",
-    title: "pagetrack",
-    description:
-      "Page related information provided idealy as a starting event for every page_view",
-    "x-tracking-targets": ["web-datalayer-js"],
-    type: "object",
-    properties: {
-      $schema: {
-        description:
-          "Defines the structure of the event. This can be used to validate an event against the schema provided.",
-        const: "https://tracking.wetter.com/schemas/events/web/pagetrack.json",
-        type: "string",
-      },
-      event: {
-        type: "string",
-        const: "pagetrack",
-        description:
-          "Contains information about page type, page city and page country etc... ",
-      },
-      mobileWebType: {
-        type: "string",
-        description: "Defines the type of webpage. Either web-app-react or old",
-        examples: ["web-app-react", "old"],
-      },
-      pageCountry: {
-        type: "string",
-        description: "The country for the website",
-        enum: ["de", "at", "ch"],
-        examples: ["de"],
-      },
-      pageName: {
-        type: "string",
-        description: "The name of the page.",
-        examples: ["main"],
-      },
-    },
-    required: ["$schema", "event", "mobileWebType", "pageCountry", "pageName"],
-  }}
+  schema={{"$schema":"https://json-schema.org/draft/2020-12/schema","$id":"https://tracking.wetter.com/schemas/events/web/pagetrack.json","title":"pagetrack","description":"Page related information provided idealy as a starting event for every page_view","type":"object","required":["$schema","event","mobileWebType","pageCountry","pageName"],"$defs":{"strictObject":{"type":"object","propertyNames":{"maxLength":40,"pattern":"^(\\$schema)|[a-z0-9_]+$"},"additionalProperties":{"anyOf":[{"$ref":"#/allOf/0/$defs/strictObject"},{"type":"array","items":{"$ref":"#/allOf/0/$defs/strictObject"}},{"not":{"type":"object"}}]}}},"$ref":"#/allOf/0/$defs/strictObject","properties":{"event":{"type":"string","description":"The name of the event.","const":"pagetrack"},"ecommerce":{"type":"object","description":"Ecommerce related data.","x-gtm-clear":true},"user_data":{"type":"object","description":"User related data.","x-gtm-clear":true},"$schema":{"description":"Defines the structure of the event. This can be used to validate an event against the schema provided.","const":"https://tracking.wetter.com/schemas/events/web/pagetrack.json","type":"string"},"mobileWebType":{"type":"string","description":"Defines the type of webpage. Either web-app-react or old","examples":["web-app-react","old"]},"pageCountry":{"type":"string","description":"The country for the website","enum":["de","at","ch"],"examples":["de"]},"pageName":{"type":"string","description":"The name of the page.","examples":["main"]}},"x-tracking-targets":["web-datalayer-js"]}}
+  sourceSchema={{"$schema":"https://json-schema.org/draft/2020-12/schema","$id":"https://tracking.wetter.com/schemas/events/web/pagetrack.json","title":"pagetrack","description":"Page related information provided idealy as a starting event for every page_view","x-tracking-targets":["web-datalayer-js"],"type":"object","properties":{"$schema":{"description":"Defines the structure of the event. This can be used to validate an event against the schema provided.","const":"https://tracking.wetter.com/schemas/events/web/pagetrack.json","type":"string"},"event":{"type":"string","const":"pagetrack","description":"Contains information about page type, page city and page country etc... "},"mobileWebType":{"type":"string","description":"Defines the type of webpage. Either web-app-react or old","examples":["web-app-react","old"]},"pageCountry":{"type":"string","description":"The country for the website","enum":["de","at","ch"],"examples":["de"]},"pageName":{"type":"string","description":"The name of the page.","examples":["main"]}},"required":["$schema","event","mobileWebType","pageCountry","pageName"]}}
   sourcePath={"events/web/pagetrack.json"}
-  schemaSources={{
-    "events/web/pagetrack.json": {
-      $schema: "https://json-schema.org/draft/2020-12/schema",
-      $id: "https://tracking.wetter.com/schemas/events/web/pagetrack.json",
-      title: "pagetrack",
-      description:
-        "Page related information provided idealy as a starting event for every page_view",
-      "x-tracking-targets": ["web-datalayer-js"],
-      type: "object",
-      properties: {
-        $schema: {
-          description:
-            "Defines the structure of the event. This can be used to validate an event against the schema provided.",
-          const:
-            "https://tracking.wetter.com/schemas/events/web/pagetrack.json",
-          type: "string",
-        },
-        event: {
-          type: "string",
-          const: "pagetrack",
-          description:
-            "Contains information about page type, page city and page country etc... ",
-        },
-        mobileWebType: {
-          type: "string",
-          description:
-            "Defines the type of webpage. Either web-app-react or old",
-          examples: ["web-app-react", "old"],
-        },
-        pageCountry: {
-          type: "string",
-          description: "The country for the website",
-          enum: ["de", "at", "ch"],
-          examples: ["de"],
-        },
-        pageName: {
-          type: "string",
-          description: "The name of the page.",
-          examples: ["main"],
-        },
-      },
-      required: [
-        "$schema",
-        "event",
-        "mobileWebType",
-        "pageCountry",
-        "pageName",
-      ],
-    },
-  }}
+  schemaSources={{"events/web/pagetrack.json":{"$schema":"https://json-schema.org/draft/2020-12/schema","$id":"https://tracking.wetter.com/schemas/events/web/pagetrack.json","title":"pagetrack","description":"Page related information provided idealy as a starting event for every page_view","x-tracking-targets":["web-datalayer-js"],"type":"object","properties":{"$schema":{"description":"Defines the structure of the event. This can be used to validate an event against the schema provided.","const":"https://tracking.wetter.com/schemas/events/web/pagetrack.json","type":"string"},"event":{"type":"string","const":"pagetrack","description":"Contains information about page type, page city and page country etc... "},"mobileWebType":{"type":"string","description":"Defines the type of webpage. Either web-app-react or old","examples":["web-app-react","old"]},"pageCountry":{"type":"string","description":"The country for the website","enum":["de","at","ch"],"examples":["de"]},"pageName":{"type":"string","description":"The name of the page.","examples":["main"]}},"required":["$schema","event","mobileWebType","pageCountry","pageName"]}}}
+  
 />
 <SchemaJsonViewer
-  schema={{
-    $schema: "https://json-schema.org/draft/2020-12/schema",
-    $id: "https://tracking.wetter.com/schemas/events/web/pagetrack.json",
-    title: "pagetrack",
-    description:
-      "Page related information provided idealy as a starting event for every page_view",
-    type: "object",
-    required: ["$schema", "event", "mobileWebType", "pageCountry", "pageName"],
-    $defs: {
-      strictObject: {
-        type: "object",
-        propertyNames: { maxLength: 40, pattern: "^(\\$schema)|[a-z0-9_]+$" },
-        additionalProperties: {
-          anyOf: [
-            { $ref: "#/allOf/0/$defs/strictObject" },
-            { type: "array", items: { $ref: "#/allOf/0/$defs/strictObject" } },
-            { not: { type: "object" } },
-          ],
-        },
-      },
-    },
-    $ref: "#/allOf/0/$defs/strictObject",
-    properties: {
-      event: {
-        type: "string",
-        description: "The name of the event.",
-        const: "pagetrack",
-      },
-      ecommerce: {
-        type: "object",
-        description: "Ecommerce related data.",
-        "x-gtm-clear": true,
-      },
-      user_data: {
-        type: "object",
-        description: "User related data.",
-        "x-gtm-clear": true,
-      },
-      $schema: {
-        description:
-          "Defines the structure of the event. This can be used to validate an event against the schema provided.",
-        const: "https://tracking.wetter.com/schemas/events/web/pagetrack.json",
-        type: "string",
-      },
-      mobileWebType: {
-        type: "string",
-        description: "Defines the type of webpage. Either web-app-react or old",
-        examples: ["web-app-react", "old"],
-      },
-      pageCountry: {
-        type: "string",
-        description: "The country for the website",
-        enum: ["de", "at", "ch"],
-        examples: ["de"],
-      },
-      pageName: {
-        type: "string",
-        description: "The name of the page.",
-        examples: ["main"],
-      },
-    },
-    "x-tracking-targets": ["web-datalayer-js"],
-  }}
+  schema={{"$schema":"https://json-schema.org/draft/2020-12/schema","$id":"https://tracking.wetter.com/schemas/events/web/pagetrack.json","title":"pagetrack","description":"Page related information provided idealy as a starting event for every page_view","type":"object","required":["$schema","event","mobileWebType","pageCountry","pageName"],"$defs":{"strictObject":{"type":"object","propertyNames":{"maxLength":40,"pattern":"^(\\$schema)|[a-z0-9_]+$"},"additionalProperties":{"anyOf":[{"$ref":"#/allOf/0/$defs/strictObject"},{"type":"array","items":{"$ref":"#/allOf/0/$defs/strictObject"}},{"not":{"type":"object"}}]}}},"$ref":"#/allOf/0/$defs/strictObject","properties":{"event":{"type":"string","description":"The name of the event.","const":"pagetrack"},"ecommerce":{"type":"object","description":"Ecommerce related data.","x-gtm-clear":true},"user_data":{"type":"object","description":"User related data.","x-gtm-clear":true},"$schema":{"description":"Defines the structure of the event. This can be used to validate an event against the schema provided.","const":"https://tracking.wetter.com/schemas/events/web/pagetrack.json","type":"string"},"mobileWebType":{"type":"string","description":"Defines the type of webpage. Either web-app-react or old","examples":["web-app-react","old"]},"pageCountry":{"type":"string","description":"The country for the website","enum":["de","at","ch"],"examples":["de"]},"pageName":{"type":"string","description":"The name of the page.","examples":["main"]}},"x-tracking-targets":["web-datalayer-js"]}}
   sourcePath={"events/web/pagetrack.json"}
-  schemaSources={{
-    "events/web/pagetrack.json": {
-      $schema: "https://json-schema.org/draft/2020-12/schema",
-      $id: "https://tracking.wetter.com/schemas/events/web/pagetrack.json",
-      title: "pagetrack",
-      description:
-        "Page related information provided idealy as a starting event for every page_view",
-      "x-tracking-targets": ["web-datalayer-js"],
-      type: "object",
-      properties: {
-        $schema: {
-          description:
-            "Defines the structure of the event. This can be used to validate an event against the schema provided.",
-          const:
-            "https://tracking.wetter.com/schemas/events/web/pagetrack.json",
-          type: "string",
-        },
-        event: {
-          type: "string",
-          const: "pagetrack",
-          description:
-            "Contains information about page type, page city and page country etc... ",
-        },
-        mobileWebType: {
-          type: "string",
-          description:
-            "Defines the type of webpage. Either web-app-react or old",
-          examples: ["web-app-react", "old"],
-        },
-        pageCountry: {
-          type: "string",
-          description: "The country for the website",
-          enum: ["de", "at", "ch"],
-          examples: ["de"],
-        },
-        pageName: {
-          type: "string",
-          description: "The name of the page.",
-          examples: ["main"],
-        },
-      },
-      required: [
-        "$schema",
-        "event",
-        "mobileWebType",
-        "pageCountry",
-        "pageName",
-      ],
-    },
-  }}
+  schemaSources={{"events/web/pagetrack.json":{"$schema":"https://json-schema.org/draft/2020-12/schema","$id":"https://tracking.wetter.com/schemas/events/web/pagetrack.json","title":"pagetrack","description":"Page related information provided idealy as a starting event for every page_view","x-tracking-targets":["web-datalayer-js"],"type":"object","properties":{"$schema":{"description":"Defines the structure of the event. This can be used to validate an event against the schema provided.","const":"https://tracking.wetter.com/schemas/events/web/pagetrack.json","type":"string"},"event":{"type":"string","const":"pagetrack","description":"Contains information about page type, page city and page country etc... "},"mobileWebType":{"type":"string","description":"Defines the type of webpage. Either web-app-react or old","examples":["web-app-react","old"]},"pageCountry":{"type":"string","description":"The country for the website","enum":["de","at","ch"],"examples":["de"]},"pageName":{"type":"string","description":"The name of the page.","examples":["main"]}},"required":["$schema","event","mobileWebType","pageCountry","pageName"]}}}
 />
+
+

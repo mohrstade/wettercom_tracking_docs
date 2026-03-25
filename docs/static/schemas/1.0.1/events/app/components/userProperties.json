@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://tracking-docs-demo.buchert.digital/schemas/1.0.1/events/app/components/userProperties.json",
+  "$id": "https://tracking.wetter.com/schemas/1.0.1/events/app/components/userProperties.json",
   "title": "User Properties",
   "description": "Firebase user properties sent automatically with every app event. These describe the user's device state, settings, and session context. They are set once per session and do not need to be defined per-event.",
   "type": "object",
