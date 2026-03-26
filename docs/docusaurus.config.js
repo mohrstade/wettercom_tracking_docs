@@ -20,15 +20,15 @@ const config = {
   },
 
   // Set the production url of your site here
-  url: 'https://tracking-docs-demo.buchert.digital/',
+  url: 'https://tracking.wetter.com',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: process.env.DOCUSAURUS_BASE_URL || '/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'benedikt-buchert', // Usually your GitHub org/user name.
-  projectName: 'tracking_docs', // Usually your repo name.
+  organizationName: 'mohrstade', // Usually your GitHub org/user name.
+  projectName: 'wettercom_tracking_docs', // Usually your repo name.
 
   onBrokenLinks: 'throw',
 
@@ -114,7 +114,7 @@ const config = {
             items: [
               {
                 label: 'Example event',
-                to: '/event-reference/pagetrack',
+                to: '/web-event-reference/pagetrack',
               },
               {
                 label: 'GTM Data Layer Documentation',
@@ -146,8 +146,21 @@ const config = {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,
       },
+      zoom: {
+        selector: '.markdown img',
+        background: {
+          light: 'rgba(255, 255, 255, 0.9)',
+          dark: 'rgba(0, 0, 0, 0.8)',
+        },
+        config: {
+          margin: 100,
+        },
+      },
     }),
-  plugins: ['docusaurus-plugin-generate-schema-docs'],
+  plugins: [
+    'docusaurus-plugin-generate-schema-docs',
+    'docusaurus-plugin-image-zoom',
+  ],
 };
 
 export default config;

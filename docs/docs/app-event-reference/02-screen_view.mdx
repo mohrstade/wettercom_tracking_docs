@@ -1,0 +1,32 @@
+---
+title: screen_view
+description: "Automatically fired by the Firebase SDK when a screen transition occurs. Contains only screen class — no screen name."
+sidebar_label: screen_view
+custom_edit_url: https://github.com/mohrstade/wettercom_tracking_docs/edit/main/docs/static/schemas/next/events/app/screen_view.json
+---
+
+import SchemaViewer from '@theme/SchemaViewer';
+import SchemaJsonViewer from '@theme/SchemaJsonViewer';
+import TopPartial from '@site/docs/partials/app-event-reference/_screen_view.mdx';
+
+
+# screen_view
+
+Automatically fired by the Firebase SDK when a screen transition occurs. Contains only screen class — no screen name.
+
+<TopPartial />
+
+<SchemaViewer
+  schema={{"$schema":"https://json-schema.org/draft/2020-12/schema","$id":"https://tracking.wetter.com/schemas/events/app/screen_view.json","title":"screen_view","description":"Automatically fired by the Firebase SDK when a screen transition occurs. Contains only screen class — no screen name.","type":"object","x-tracking-targets":["android-firebase-kotlin-sdk","android-firebase-java-sdk","ios-firebase-swift-sdk","ios-firebase-objc-sdk"],"required":["event"],"properties":{"event":{"type":"string","const":"screen_view","description":"The Firebase event name."},"manual_tracking":{"type":"integer","const":1,"description":"Set to 1 by app code when the screen_view is triggered manually (as opposed to automatic SDK tracking)."}}}}
+  sourceSchema={{"$schema":"https://json-schema.org/draft/2020-12/schema","$id":"https://tracking.wetter.com/schemas/events/app/screen_view.json","title":"screen_view","description":"Automatically fired by the Firebase SDK when a screen transition occurs. Contains only screen class — no screen name.","x-tracking-targets":["android-firebase-kotlin-sdk","android-firebase-java-sdk","ios-firebase-swift-sdk","ios-firebase-objc-sdk"],"type":"object","properties":{"event":{"type":"string","const":"screen_view","description":"The Firebase event name."},"manual_tracking":{"type":"integer","const":1,"description":"Set to 1 by app code when the screen_view is triggered manually (as opposed to automatic SDK tracking)."}},"required":["event"]}}
+  sourcePath={"events/app/screen_view.json"}
+  schemaSources={{"events/app/screen_view.json":{"$schema":"https://json-schema.org/draft/2020-12/schema","$id":"https://tracking.wetter.com/schemas/events/app/screen_view.json","title":"screen_view","description":"Automatically fired by the Firebase SDK when a screen transition occurs. Contains only screen class — no screen name.","x-tracking-targets":["android-firebase-kotlin-sdk","android-firebase-java-sdk","ios-firebase-swift-sdk","ios-firebase-objc-sdk"],"type":"object","properties":{"event":{"type":"string","const":"screen_view","description":"The Firebase event name."},"manual_tracking":{"type":"integer","const":1,"description":"Set to 1 by app code when the screen_view is triggered manually (as opposed to automatic SDK tracking)."}},"required":["event"]}}}
+  
+/>
+<SchemaJsonViewer
+  schema={{"$schema":"https://json-schema.org/draft/2020-12/schema","$id":"https://tracking.wetter.com/schemas/events/app/screen_view.json","title":"screen_view","description":"Automatically fired by the Firebase SDK when a screen transition occurs. Contains only screen class — no screen name.","type":"object","x-tracking-targets":["android-firebase-kotlin-sdk","android-firebase-java-sdk","ios-firebase-swift-sdk","ios-firebase-objc-sdk"],"required":["event"],"properties":{"event":{"type":"string","const":"screen_view","description":"The Firebase event name."},"manual_tracking":{"type":"integer","const":1,"description":"Set to 1 by app code when the screen_view is triggered manually (as opposed to automatic SDK tracking)."}}}}
+  sourcePath={"events/app/screen_view.json"}
+  schemaSources={{"events/app/screen_view.json":{"$schema":"https://json-schema.org/draft/2020-12/schema","$id":"https://tracking.wetter.com/schemas/events/app/screen_view.json","title":"screen_view","description":"Automatically fired by the Firebase SDK when a screen transition occurs. Contains only screen class — no screen name.","x-tracking-targets":["android-firebase-kotlin-sdk","android-firebase-java-sdk","ios-firebase-swift-sdk","ios-firebase-objc-sdk"],"type":"object","properties":{"event":{"type":"string","const":"screen_view","description":"The Firebase event name."},"manual_tracking":{"type":"integer","const":1,"description":"Set to 1 by app code when the screen_view is triggered manually (as opposed to automatic SDK tracking)."}},"required":["event"]}}}
+/>
+
+

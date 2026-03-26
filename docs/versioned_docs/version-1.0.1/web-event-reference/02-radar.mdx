@@ -1,0 +1,32 @@
+---
+title: radar
+description: "Covers radar events"
+sidebar_label: radar
+custom_edit_url: https://github.com/mohrstade/wettercom_tracking_docs/edit/main/docs/static/schemas/1.0.1/events/web/radar.json
+---
+
+import SchemaViewer from '@theme/SchemaViewer';
+import SchemaJsonViewer from '@theme/SchemaJsonViewer';
+
+
+
+# radar
+
+Covers radar events
+
+
+
+<SchemaViewer
+  schema={{"$schema":"https://json-schema.org/draft/2020-12/schema","$id":"https://tracking.wetter.com/schemas/1.0.1/events/web/radar.json","title":"radar","description":"Covers radar events","type":"object","required":["$schema","event"],"$defs":{"strictObject":{"type":"object","propertyNames":{"maxLength":40,"pattern":"^(\\$schema)|[a-z0-9_]+$"},"additionalProperties":{"anyOf":[{"$ref":"#/allOf/0/$defs/strictObject"},{"type":"array","items":{"$ref":"#/allOf/0/$defs/strictObject"}},{"not":{"type":"object"}}]}}},"$ref":"#/allOf/0/$defs/strictObject","properties":{"event":{"type":"string","description":"The name of the event.","const":"radar"},"ecommerce":{"type":"object","description":"Ecommerce related data.","x-gtm-clear":true},"user_data":{"type":"object","description":"User related data.","x-gtm-clear":true},"$schema":{"description":"Defines the structure of the event. This can be used to validate an event against the schema provided.","const":"https://tracking.wetter.com/schemas/events/web/radar.json","type":"string"},"radarAction":{"type":"string","description":"Type of action of the Regenradar screen","examples":["Webview NextGen"]},"radarLabel":{"type":"string","description":"Describes the layout of the Regenradar feature","examples":["initial_map_style_satellite"]}},"x-tracking-targets":["web-datalayer-js"]}}
+  sourceSchema={{"$schema":"https://json-schema.org/draft/2020-12/schema","$id":"https://tracking.wetter.com/schemas/1.0.1/events/web/radar.json","title":"radar","description":"Covers radar events","x-tracking-targets":["web-datalayer-js"],"type":"object","properties":{"$schema":{"description":"Defines the structure of the event. This can be used to validate an event against the schema provided.","const":"https://tracking.wetter.com/schemas/events/web/radar.json","type":"string"},"event":{"type":"string","const":"radar","description":"Events covers the Regenradar feature"},"radarAction":{"type":"string","description":"Type of action of the Regenradar screen","examples":["Webview NextGen"]},"radarLabel":{"type":"string","description":"Describes the layout of the Regenradar feature","examples":["initial_map_style_satellite"]}},"required":["$schema","event"]}}
+  sourcePath={"events/web/radar.json"}
+  schemaSources={{"events/web/radar.json":{"$schema":"https://json-schema.org/draft/2020-12/schema","$id":"https://tracking.wetter.com/schemas/1.0.1/events/web/radar.json","title":"radar","description":"Covers radar events","x-tracking-targets":["web-datalayer-js"],"type":"object","properties":{"$schema":{"description":"Defines the structure of the event. This can be used to validate an event against the schema provided.","const":"https://tracking.wetter.com/schemas/events/web/radar.json","type":"string"},"event":{"type":"string","const":"radar","description":"Events covers the Regenradar feature"},"radarAction":{"type":"string","description":"Type of action of the Regenradar screen","examples":["Webview NextGen"]},"radarLabel":{"type":"string","description":"Describes the layout of the Regenradar feature","examples":["initial_map_style_satellite"]}},"required":["$schema","event"]}}}
+  
+/>
+<SchemaJsonViewer
+  schema={{"$schema":"https://json-schema.org/draft/2020-12/schema","$id":"https://tracking.wetter.com/schemas/1.0.1/events/web/radar.json","title":"radar","description":"Covers radar events","type":"object","required":["$schema","event"],"$defs":{"strictObject":{"type":"object","propertyNames":{"maxLength":40,"pattern":"^(\\$schema)|[a-z0-9_]+$"},"additionalProperties":{"anyOf":[{"$ref":"#/allOf/0/$defs/strictObject"},{"type":"array","items":{"$ref":"#/allOf/0/$defs/strictObject"}},{"not":{"type":"object"}}]}}},"$ref":"#/allOf/0/$defs/strictObject","properties":{"event":{"type":"string","description":"The name of the event.","const":"radar"},"ecommerce":{"type":"object","description":"Ecommerce related data.","x-gtm-clear":true},"user_data":{"type":"object","description":"User related data.","x-gtm-clear":true},"$schema":{"description":"Defines the structure of the event. This can be used to validate an event against the schema provided.","const":"https://tracking.wetter.com/schemas/events/web/radar.json","type":"string"},"radarAction":{"type":"string","description":"Type of action of the Regenradar screen","examples":["Webview NextGen"]},"radarLabel":{"type":"string","description":"Describes the layout of the Regenradar feature","examples":["initial_map_style_satellite"]}},"x-tracking-targets":["web-datalayer-js"]}}
+  sourcePath={"events/web/radar.json"}
+  schemaSources={{"events/web/radar.json":{"$schema":"https://json-schema.org/draft/2020-12/schema","$id":"https://tracking.wetter.com/schemas/1.0.1/events/web/radar.json","title":"radar","description":"Covers radar events","x-tracking-targets":["web-datalayer-js"],"type":"object","properties":{"$schema":{"description":"Defines the structure of the event. This can be used to validate an event against the schema provided.","const":"https://tracking.wetter.com/schemas/events/web/radar.json","type":"string"},"event":{"type":"string","const":"radar","description":"Events covers the Regenradar feature"},"radarAction":{"type":"string","description":"Type of action of the Regenradar screen","examples":["Webview NextGen"]},"radarLabel":{"type":"string","description":"Describes the layout of the Regenradar feature","examples":["initial_map_style_satellite"]}},"required":["$schema","event"]}}}
+/>
+
+

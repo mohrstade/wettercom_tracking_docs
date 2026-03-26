@@ -40,13 +40,13 @@ The project follows a schema-first approach.
 
 All commands can be run from the root:
 
-| Command | Description |
-|---|---|
-| `npm run start` | Start local dev server |
-| `npm run build` | Build the static site |
-| `npm run gen-docs` | Generate MDX docs from schemas |
+| Command                    | Description                       |
+| -------------------------- | --------------------------------- |
+| `npm run start`            | Start local dev server            |
+| `npm run build`            | Build the static site             |
+| `npm run gen-docs`         | Generate MDX docs from schemas    |
 | `npm run validate-schemas` | Validate all schemas and examples |
-| `npm run lint` | Lint schema files |
+| `npm run lint`             | Lint schema files                 |
 
 ## Schema Validation
 

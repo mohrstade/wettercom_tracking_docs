@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://tracking.wetter.com/schemas/1.0.1/events/app/slider_move.json",
+  "title": "slider_move",
+  "description": "Fired when the user drags the time slider on the maps / radar screen to scrub through the precipitation forecast.",
+  "x-tracking-targets": [
+    "android-firebase-kotlin-sdk",
+    "android-firebase-java-sdk",
+    "ios-firebase-swift-sdk",
+    "ios-firebase-objc-sdk"
+  ],
+  "type": "object",
+  "properties": {
+    "event": {
+      "type": "string",
+      "const": "event",
+      "description": "Fixed value indicating a generic interaction event."
+    },
+    "eventAction": {
+      "type": "string",
+      "const": "slider_move",
+      "description": "The specific action performed."
+    },
+    "eventCategory": {
+      "type": "string",
+      "description": "The feature area where the interaction occurred.",
+      "examples": ["maps"]
+    }
+  },
+  "required": ["event", "eventAction", "eventCategory"]
+}
